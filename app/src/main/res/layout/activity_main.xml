@@ -15,6 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="24sp"
             android:text="@string/you"/>
         <TextView
             android:layout_width="wrap_content"
@@ -27,34 +28,66 @@
         android:layout_width="wrap_content"
         android:layout_weight="4"
         >
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/landslide"
-            android:layout_weight="1"/>
-        <ImageView
+            android:contentDescription="@null"
+            android:layout_weight="1"
+            tools:ignore="NestedWeights"
+            android:scaleType="fitCenter"
+            android:id="@+id/rockImage"
+            android:visibility="invisible"
+            />
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/document"
+            android:contentDescription="@null"
             android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:id="@+id/papperImage"
+            android:visibility="invisible"
             />
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/scissors"
-            android:layout_weight="1"/>
-        <ImageView
+            android:contentDescription="@null"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:id="@+id/scissorsImage"
+            android:visibility="invisible"
+            />
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/lizard"
-            android:layout_weight="1"/>
-        <ImageView
+            android:contentDescription="@null"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:id="@+id/lizardImage"
+            android:visibility="invisible"
+            />
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/vulcan_salute"
-            android:layout_weight="1"/>
+            android:contentDescription="@null"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:id="@+id/spockImage"
+            android:visibility="invisible"
+            />
     </LinearLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/start"
+    android:textAlignment="center"
+    android:id="@+id/mensaje"
 
+    />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_height="wrap_content"
@@ -65,34 +98,59 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/landslide"
+            android:scaleType="fitCenter"
+            android:contentDescription="@null"
             android:layout_weight="1"
-            android:scaleType="fitCenter"/>
+            tools:ignore="NestedWeights"
+            android:id="@+id/rockButton"
+            android:visibility="invisible"
+            />
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/document"
-            android:layout_weight="1"
             android:scaleType="fitCenter"
+            android:contentDescription="@null"
+            android:layout_weight="1"
+            android:id="@+id/papperButton"
+            android:visibility="invisible"
             />
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/scissors"
-            android:layout_weight="1"
             android:scaleType="fitCenter"
+            android:contentDescription="@null"
+            android:layout_weight="1"
+            android:id="@+id/scissorsButton"
+            android:visibility="invisible"
             />
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/lizard"
+            android:scaleType="fitCenter"
+            android:contentDescription="@null"
             android:layout_weight="1"
-            android:scaleType="fitCenter"/>
+            android:id="@+id/lizardButton"
+            android:visibility="invisible"
+            />
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/vulcan_salute"
+            android:scaleType="fitCenter"
+            android:contentDescription="@null"
             android:layout_weight="1"
-            android:scaleType="fitCenter"/>
+            android:id="@+id/spockButton"
+            android:visibility="invisible"
+            />
     </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/play"
+        android:id="@+id/playButton"
+        />
 
 </LinearLayout>
