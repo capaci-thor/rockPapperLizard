@@ -15,11 +15,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
+            android:id="@+id/scoreText"
+            android:visibility="invisible"
             android:text="@string/you"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/comp"/>
+            android:text="@string/comp"
+            android:paddingLeft="20dp"
+            android:textSize="24sp"
+            android:visibility="invisible"
+            android:id="@+id/score"/>
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"

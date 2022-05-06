@@ -28,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
     public ImageButton spockBtn;
     //Texto
     public TextView mensaje;
+    public TextView score;
+    public TextView scoteText;
+
+    public int comp;
+    public int you;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +54,10 @@ public class MainActivity extends AppCompatActivity {
         spockBtn = (ImageButton) findViewById(R.id.spockButton);
         //Texto
         mensaje = (TextView) findViewById(R.id.mensaje);
-
+        score = (TextView) findViewById(R.id.score);
+        scoteText = (TextView) findViewById(R.id.scoreText);
+        comp = 0;
+        you = 0;
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +75,29 @@ public class MainActivity extends AppCompatActivity {
                 spockBtn.setVisibility(View.VISIBLE);
 
                 mensaje.setVisibility(View.INVISIBLE);
+                score.setVisibility(View.VISIBLE);
+                scoteText.setVisibility(View.VISIBLE);
+                playButton.setVisibility(View.INVISIBLE);
 
 
+                //Reset de colores de botones
+                rockBtn.setBackgroundColor(getResources().getColor(R.color.def));
+                papperBtn.setBackgroundColor(getResources().getColor(R.color.def));
+                scissorsBtn.setBackgroundColor(getResources().getColor(R.color.def));
+                lizardBtn.setBackgroundColor(getResources().getColor(R.color.def));
+                spockBtn.setBackgroundColor(getResources().getColor(R.color.def));
+
+                rockImg.setBackgroundColor(getResources().getColor(R.color.def));
+                papperImg.setBackgroundColor(getResources().getColor(R.color.def));
+                scissorsImg.setBackgroundColor(getResources().getColor(R.color.def));
+                lizardImg.setBackgroundColor(getResources().getColor(R.color.def));
+                spockImg.setBackgroundColor(getResources().getColor(R.color.def));
+
+                rockBtn.setEnabled(true);
+                papperBtn.setEnabled(true);
+                scissorsBtn.setEnabled(true);
+                lizardBtn.setEnabled(true);
+                spockBtn.setEnabled(true);
             }
         });
 
@@ -292,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if(opcion == 4)//Spock
         {
-            rockBtn.setBackgroundColor(getResources().getColor(R.color.select));
+            spockBtn.setBackgroundColor(getResources().getColor(R.color.select));
             switch (random)
             {
                 case 0:
@@ -338,18 +367,42 @@ public class MainActivity extends AppCompatActivity {
     {
         mensaje.setVisibility(View.VISIBLE);
         mensaje.setText("Ganaste");
+        rockBtn.setEnabled(false);
+        papperBtn.setEnabled(false);
+        scissorsBtn.setEnabled(false);
+        lizardBtn.setEnabled(false);
+        spockBtn.setEnabled(false);
+        playButton.setVisibility(View.VISIBLE);
+        you++;
+        score.setText(Integer.toString(you)+ " - " + Integer.toString(comp));
+
     }
 
     void perdiste()
     {
         mensaje.setVisibility(View.VISIBLE);
         mensaje.setText("Perdiste");
+        rockBtn.setEnabled(false);
+        papperBtn.setEnabled(false);
+        scissorsBtn.setEnabled(false);
+        lizardBtn.setEnabled(false);
+        spockBtn.setEnabled(false);
+        playButton.setVisibility(View.VISIBLE);
+        comp++;
+        score.setText(Integer.toString(you)+ " - " + Integer.toString(comp));
     }
 
     void empate()
     {
         mensaje.setVisibility(View.VISIBLE);
         mensaje.setText("Empate");
+        rockBtn.setEnabled(false);
+        papperBtn.setEnabled(false);
+        scissorsBtn.setEnabled(false);
+        lizardBtn.setEnabled(false);
+        spockBtn.setEnabled(false);
+        playButton.setVisibility(View.VISIBLE);
+        score.setText(Integer.toString(you)+ " - " + Integer.toString(comp));
     }
 
 }
